@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (mtvEmail.getText().toString().isEmpty() != true && metpassword.getText().toString().isEmpty() != true) {
-                    /*Intent ilogin = new Intent(MainActivity.this, loginSuccess.class);
-                    startActivity(ilogin);*/
                     Toast.makeText(MainActivity.this, "You are logged in successfully !!", Toast.LENGTH_SHORT).show();
+                    Intent ilogin = new Intent(MainActivity.this, LoginSuccess.class);
+                    startActivity(ilogin);
 
                 } else {
                     Toast.makeText(MainActivity.this, "Please enter login details.", Toast.LENGTH_SHORT).show();
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         mtvforgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ilogin = new Intent(MainActivity.this, Register.class);
+                Intent ilogin = new Intent(MainActivity.this, ForgotPassword.class);
                 startActivity(ilogin);
             }
         });

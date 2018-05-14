@@ -1,5 +1,6 @@
 package com.example.android.loginflowchallenge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,20 +21,19 @@ public class ForgotPassword extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
         getSupportActionBar().hide();
 
-        mretrieveMail = (EditText)findViewById(R.id.retrieveMail);
-        mretrieveButton = (Button)findViewById(R.id.retrieveButton);
+        mretrieveMail = (EditText) findViewById(R.id.retrieveMail);
+        mretrieveButton = (Button) findViewById(R.id.retrieveButton);
 
         mretrieveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 rmail = mretrieveMail.getText().toString();
-                if(rmail.isEmpty() != true)
-                {
+                if (rmail.isEmpty() != true) {
                     Toast.makeText(ForgotPassword.this, "Your password has been reset successfully !! ", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
+                    Intent intent = new Intent(ForgotPassword.this, MainActivity.class);
+                    startActivity(intent);
+                } else {
                     Toast.makeText(ForgotPassword.this, "Please enter valid Email ID !!", Toast.LENGTH_SHORT).show();
                 }
 
